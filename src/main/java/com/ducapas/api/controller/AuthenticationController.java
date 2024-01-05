@@ -1,6 +1,7 @@
 package com.ducapas.api.controller;
 
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
@@ -49,10 +50,11 @@ public class AuthenticationController {
     public ResponseEntity<Void> register(@RequestBody RegisterDTO data){
         if(repository.findByLogin(data.login())!=null){return ResponseEntity.badRequest().build();}
         String crip = new BCryptPasswordEncoder().encode(data.password());
-        this.repository.save(User.builder().login(data.login()).nome(data.nome()).password(crip).role("ROLE_ADMIN").build());
+        User user = User.builder().login(data.login()).nome(data.nome()).password(crip).role("ROLE_ADMIN").build();
+        this.repository.save(user);
         return ResponseEntity.ok().build();
     }
-    
+
     @GetMapping("/gerenciamentoCadastrados")
     public ResponseEntity<List<User>> gerenciamentoCadastrados(HttpServletRequest request) {
         String token = request.getHeader("Authorization").replace("Bearer ", "");
@@ -66,7 +68,7 @@ public class AuthenticationController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> delete(@PathVariable Integer id){
+    public ResponseEntity<Void> delete(@PathVariable UUID id){
         if(repository.findById(id)==null){return ResponseEntity.badRequest().build();}
         this.repository.delete(repository.findById(id).get());
         return ResponseEntity.ok().build();

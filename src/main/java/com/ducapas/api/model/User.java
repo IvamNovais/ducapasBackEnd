@@ -2,6 +2,7 @@ package com.ducapas.api.model;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
@@ -30,8 +31,8 @@ import lombok.Setter;
 @Builder
 public class User implements UserDetails{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private String nome;
     private String login;
     private String password;

@@ -1,6 +1,8 @@
 package com.ducapas.api.model;
 
 
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cliente {
-    private Integer id;
+    private UUID id;
     User user;
     String nomeRasaoSocial;
     String cpfCnpj;
