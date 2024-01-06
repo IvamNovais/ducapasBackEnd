@@ -39,4 +39,7 @@ public class ProdutoService {
         obterProdutoPorIdOrElse(produto.getId());
         produtoRepository.delete(produto);
     }
+    List<Produto> getBaixoEstoque(){
+        return produtoRepository.getBaixoEstoque();
+    }
 }
