@@ -12,19 +12,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name = "despesa", schema = "financeiro")
+@Table(name = "receita", schema = "financeiro")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Despesa {
+public class Receita {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String descricao;
     private double valor;
     private Date prazo;
-    private boolean pago;
     private Date diaPagamento;
     private Date diaCriacao;
+    private boolean juros;
+    private boolean recebido;
 }
