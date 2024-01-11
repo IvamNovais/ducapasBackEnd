@@ -5,8 +5,8 @@ CREATE TABLE financeiro.despesa (
     valor DOUBLE PRECISION,
     prazo DATE,
     pago BOOLEAN,
-    diaPagamento DATE,
-    diaCriacao DATE
+    dia_pagamento DATE,
+    dia_criacao DATE
 );
 
 CREATE TABLE financeiro.receita (
@@ -14,8 +14,8 @@ CREATE TABLE financeiro.receita (
     descricao VARCHAR(255),
     valor DOUBLE PRECISION,
     prazo DATE,
-    diaPagamento DATE,
-    diaCriacao DATE,
-    juros BOOLEAN,
+    dia_pagamento DATE,
+    dia_criacao DATE,
+    juros DOUBLE PRECISION,
     recebido BOOLEAN
 );

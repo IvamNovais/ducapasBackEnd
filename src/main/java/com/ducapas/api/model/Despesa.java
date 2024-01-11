@@ -3,6 +3,7 @@ package com.ducapas.api.model;
 import java.util.Date;
 import java.util.UUID;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -25,6 +26,8 @@ public class Despesa {
     private double valor;
     private Date prazo;
     private boolean pago;
+    @Column(name = "diaPagamento")
     private Date diaPagamento;
+    @Column(name = "diaCriacao")
     private Date diaCriacao;
 }

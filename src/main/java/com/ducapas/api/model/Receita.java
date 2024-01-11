@@ -26,6 +26,6 @@ public class Receita {
     private Date prazo;
     private Date diaPagamento;
     private Date diaCriacao;
-    private boolean juros;
+    private double juros;
     private boolean recebido;
 }

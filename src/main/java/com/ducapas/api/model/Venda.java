@@ -8,14 +8,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Data
-public class Encomenda {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Venda {
     private UUID id;
     private Cliente comprador;
-    private Date dataEncomenda;
-    private Date dataEntrega;
+    private Date dataVenda;
     private List<Pedido> pedidos;
     private String status;
 }
